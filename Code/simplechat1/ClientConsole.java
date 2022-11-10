@@ -81,7 +81,7 @@ public class ClientConsole implements ChatIF
           case "#logoff":
             client.closeConnection();
           case "#login":
-            if (client.isConnected()){
+            if (client.isConnected()){ 
               System.out.println("Error: already logged in!");
             }
           case "#gethost":
