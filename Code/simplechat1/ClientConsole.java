@@ -74,7 +74,24 @@ public class ClientConsole implements ChatIF
       while (true) 
       {
         message = fromConsole.readLine();
-        client.handleMessageFromClientUI(message);
+        switch(message){ //**** Changed for E50 - ZKM
+          case "#quit":
+            client.closeConnection();
+            System.exit(1);
+          case "#logoff":
+            client.closeConnection();
+          case "#login":
+            if (client.isConnected()){
+              System.out.println("Error: already logged in!");
+            }
+          case "#gethost":
+            System.out.println(client.getHost());
+          case "#getport":
+            System.out.println(client.getPort());
+          default:
+            client.handleMessageFromClientUI(message);
+
+        }
       }
     } 
     catch (Exception ex) 
