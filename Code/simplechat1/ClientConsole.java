@@ -117,8 +117,8 @@ public class ClientConsole implements ChatIF
     {
       host = "localhost";
     }
-    ClientConsole chat;
-    if (port == 0){chat= new ClientConsole(host, DEFAULT_PORT);}
+    ClientConsole chat; //**** changed for E49 - ZKM
+    if (port == 0){chat= new ClientConsole(host, DEFAULT_PORT);} //checking if port added
     else{chat= new ClientConsole(host, port);}
     chat.accept();  //Wait for console data
   }
