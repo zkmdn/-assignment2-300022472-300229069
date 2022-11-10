@@ -1,0 +1,136 @@
+class Account
+{
+  public String createPost(){}
+  public void commentOnPost(String){}
+name;
+  1 -- * Course;
+  
+  
+}
+
+class Student
+{
+  studentNum;
+email;
+Integer phoneNum;
+public void enrolInCourse(){
+
+}
+isA Account;
+  1 -- * Tournament;
+}
+
+class Professor
+{
+  public String createQuestion(){}
+  public String
+    createTournament(){
+
+}
+isA Account;
+  1 -- * Question;
+  1 -- * Tournament;
+}
+
+class Course
+{
+  code;
+title;
+1 -- * Post;
+  1 -- * Tournament;
+}
+
+class Post
+{
+  Category tag;
+  bool isPublic;
+}
+
+class Note
+{
+  body;
+title;
+isA Post;
+  * -- 1 Student;
+  * -- 1 Professor;
+}
+
+class Question
+{
+  question;
+status;
+public bool isHomework(){
+
+}
+isA Post;
+}
+
+class Tournament
+{
+  Date startDate;
+  Time startTime;
+  Integer numRounds;
+  Integer maxAttempts;
+  Double penalty;
+  Double correctnessWeight;
+  Double participationWeight;
+  1 -- * TournamentGrade;
+}
+
+class QuestionGrade
+{
+    isA Grade;
+* -- 1 Student;
+  * -- 1 Question;
+}
+
+class Answer
+{
+  * -- 1 Question;
+}
+
+class MultipleChoiceAnswer
+{
+  selectedChoice;
+  List otherChoices;
+isA Answer;
+}
+
+class NumericAnswer
+{
+  Integer number;
+isA Answer;
+}
+
+class TextAnswer
+{
+  text;
+isA Answer;
+}
+
+class WordAnswer
+{
+  word;
+isA Answer;
+}
+
+class TournamentGrade
+{
+    isA Grade;
+participation;
+  correctness;
+}
+
+class Grade
+{
+  finalGrade;
+  * -- 1 Student;
+}
+
+class HomeworkStatus
+{
+  Date dueDate;
+Time timeDue;
+0..1 -- 1 Question;
+}
+
